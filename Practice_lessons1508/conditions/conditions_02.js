@@ -10,3 +10,10 @@ Handles empty text box
  * @param {string} age
  */
 function getNextAge(age) {}
+
+//2
+/*- Complete the function getNextAge such that it returns the age next year (by adding 1 to the current age).*/
+function getNextAge(ageNow){
+    return ageNow + 1;
+    }
+    

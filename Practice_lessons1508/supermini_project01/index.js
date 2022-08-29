@@ -1,10 +1,18 @@
-function sum(a, b) {}
+function sum(a, b) {
+  return (a+b)
+}
 
-function subtract(a, b) {}
+function subtract(a, b) {
+  return a-b;
+}
 
-function multiply(a, b) {}
+function multiply(a, b) {
+  return a * b;
+}
 
-function divide(a, b) {}
+function divide(a, b) {
+  return a / b;
+}
 
 /* Do not touch below this line */
 let output = document.querySelector("#output");
