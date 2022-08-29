@@ -8,7 +8,13 @@ from the numbers parameter it receives.
  * @param {number[]} numbers
  */
 function sumOddNumbers(numbers) {
-
+    let sum = 0;
+    numbers.forEach(function(number){
+        if (number % 2 != 0){
+sum = sum + number;
+        }
+    })
+return sum;
 }
 
 // Sample usage - do not modify

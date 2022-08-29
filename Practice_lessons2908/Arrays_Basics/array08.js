@@ -10,6 +10,9 @@ in the userIds array it receives and logs it to the console (using console.log).
  * @param {number[]} userIds
  */
 function logUserIds(userIds) {
+    userIds.forEach(function (ids){
+        console.log(ids)
+    })
 
 }
 

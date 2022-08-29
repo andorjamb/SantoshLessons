@@ -9,7 +9,10 @@ and logs it to the console (using console.log).
  * @param {array} elements
  */
 function loopThroughElements(elements) {
-
+    elements.forEach(function (element){
+        console.log(element);
+    }
+    )
 }
 
 // Sample usage - do not modify

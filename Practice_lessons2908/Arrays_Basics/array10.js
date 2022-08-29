@@ -8,7 +8,12 @@ from the numbers parameter it receives.
  * @param {number[]} numbers
  */
 function sumPositiveNumbers(numbers) {
-
+let sum = 0;
+numbers.forEach(function(number) {if (number > 0) {
+    sum = sum + number;
+     }
+    })
+    return sum;
 }
 
 // Sample usage - do not modify
