@@ -7,10 +7,14 @@ the freezing temperatures (the temperatures that are below 0).
 /**
  * @param {number[]} temperatures
  */
-function getPositiveTemperatures(temperatures) {
+function getFreezingTemperatures(temperatures) {
+   return temperatures.filter(function(temperature){
+    temperature < 0;
+    } )//filter iterates for each variable in the 'temperatures' array. 
+    //each variable satisfying the condition is pushed to a new array.
 
 }
 
 // Sample usage - do not modify
-console.log(getPositiveTemperatures([-5, 12, 3])); // [12, 3]
-console.log(getPositiveTemperatures([1, -3, -2, 4, 10])); // [1, 4, 10]
+console.log(getFreezingTemperatures([-5, 12, 3])); // [12, 3]
+console.log(getFreezingTemperatures([1, -3, -2, 4, 10])); // [1, 4, 10]

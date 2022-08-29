@@ -8,8 +8,12 @@ Complete the function getPositiveTemperatures such that it returns an array cont
  * @param {number[]} temperatures
  */
 function getPositiveTemperatures(temperatures) {
-
+    let newArray=  temperatures.filter(function(temperature) {
+    return temperature > 0;
+});
+return newArray;
 }
+
 
 // Sample usage - do not modify
 console.log(getPositiveTemperatures([-5, 12, 3])); // [12, 3]
