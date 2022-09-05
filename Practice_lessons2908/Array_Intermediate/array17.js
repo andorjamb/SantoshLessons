@@ -10,6 +10,7 @@ and the second string is made up of 1 character.
  * @param {string[]} strings
  */
 function getStringSizes(strings) {
+    return strings.map(string.length);
 
 }
 

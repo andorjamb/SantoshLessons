@@ -10,6 +10,7 @@ it receives exists in the apps parameter, and false otherwise.
  * @param {string} app
  */
 function isAppUsed(apps, app) {
+    return apps.includes(app);
 
 }
 
