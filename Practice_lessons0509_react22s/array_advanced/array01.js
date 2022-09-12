@@ -6,9 +6,8 @@ Grades should be increased when at least one of them is failing (10 and above ar
 /**
  * @param {number[]} grades
  */
-const shouldAdjustGrades = grades => {
+const shouldAdjustGrades = grades => {console.log(grades.some(grades<10));}
 
-}
 
 
 // Sample usage - do not modify
