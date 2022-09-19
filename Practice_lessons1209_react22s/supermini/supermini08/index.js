@@ -3,7 +3,41 @@ class Passport {
    * @param {string} firstName
    * @param {string} lastName
    */
+
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    console.log(this.firstName);
+  }
+  getFirstName() {
+    return this.firstName.toLowerCase();
+  }
+
+  getLastName() {
+    return this.lastName.toUpperCase();
+
+  }
+
+  getFullName() {
+    return this.firstName + ' ' + this.lastName;
+
+  }
+
+  getInitials() {
+    return this.firstName[0].toUpperCase() + '.' + this.lastName[0].toUpperCase() + '.';
+  }
+
+
+  getIsValidName() {
+
+    if ((this.firstName.length > 1) && (this.lastName.length > 1) && (this.lastName[this.lastName.length - 1] != '.')) {
+      return 'yes';
+
+    } else { return 'no'; }
+
+  }
 }
+
 
 //Sample usage do not modify (but feel free to read)
 let firstName = document.querySelector('#first-name');

@@ -1,10 +1,35 @@
 class Tasks {
   constructor() {
     this.tasks = [];
+
   }
 
   /** @param {string} csvString */
-  importCsv(csvString) {}
+  importCsv(csvString) { //takes dropdown value as input
+    console.log(this.tasks = csvString.split(','));
+    this.tasks = csvString.split(',');
+
+  }
+
+  getCount() {
+    return this.tasks.length;
+  }
+
+  getFirst() {
+    return this.tasks[0];
+  }
+
+  getLast() {
+    return this.tasks[this.tasks.length - 1];
+  }
+
+  getUnformattedTasks() {
+    /*  const unformattedTasks = "";
+     this.tasks.forEach(task => task.toLowerCase().toString());
+     return unformattedTasks; */
+    return this.tasks.join(',').toLowerCase();
+
+  }
 }
 
 //Sample usage do not modify (but feel free to read)
