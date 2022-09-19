@@ -7,9 +7,7 @@ Re-write the function triple without using the keyword return.
 /**
  * @param {number} value
  */
-function triple () {
-
-}
+(a) => a *3;
 
 
 // Sample usage - do not modify

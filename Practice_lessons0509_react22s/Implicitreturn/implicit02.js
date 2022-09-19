@@ -6,9 +6,10 @@ Create a function multiply that returns the product of both of its parameters wi
 /**
  * @param {number} value
  */
-function triple () {
 
-}
+const multiply = (a,b) => a*b;
+
+
 
 
 // Sample usage - do not modify
