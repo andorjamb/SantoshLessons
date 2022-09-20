@@ -7,7 +7,7 @@ Complete the function getFullName such that it returns the full name from the us
  * @param {object} [user.info]
  * @param {last} [user.info.name]
  */
-const getFullName = user => {
+const getFullName = user => {return user.info.name?
 
 }
 

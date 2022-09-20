@@ -1,5 +1,6 @@
 class NameVariations {
   /** @param {string} name */
+<<<<<<< HEAD
   constructor(name) {
     this.name = name;
   }
@@ -7,6 +8,12 @@ class NameVariations {
   getNumberOfChars() {
     // return the number of characters in: name
     return this.name.length;
+=======
+  constructor() {}
+
+  getNumberOfChars() {
+    // return the number of characters in: name
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
   }
 
   getLower() {

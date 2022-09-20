@@ -6,7 +6,10 @@ from the user-card element.
 **/
 
 const getUserIdFromCard = () => {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
   
 }
 

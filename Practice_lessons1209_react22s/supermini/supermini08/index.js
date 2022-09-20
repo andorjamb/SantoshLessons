@@ -3,6 +3,7 @@ class Passport {
    * @param {string} firstName
    * @param {string} lastName
    */
+<<<<<<< HEAD
 
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -39,6 +40,10 @@ class Passport {
 }
 
 
+=======
+}
+
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
 //Sample usage do not modify (but feel free to read)
 let firstName = document.querySelector('#first-name');
 let lastName = document.querySelector('#last-name');

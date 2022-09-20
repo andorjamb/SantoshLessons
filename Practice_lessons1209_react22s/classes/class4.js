@@ -6,6 +6,7 @@ a new instance of the class is being created..
 **/
 
 // write class definition
+<<<<<<< HEAD
 class Recipe {
     constructor (name, calories )
     {console.log(this.name);
@@ -13,6 +14,9 @@ class Recipe {
 
     }
 }
+=======
+class Recipe {}
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
 
 // Class usage
 let pasta = new Recipe('Pasta', 600);

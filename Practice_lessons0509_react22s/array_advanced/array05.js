@@ -6,7 +6,7 @@ Complete the function removeSecondApp such that it removes the second element fr
 /**
  * @param {array} apps
  */
-const removeSecondApp = apps => {
+const removeSecondApp = apps => {apps.splice[1]
 
 }
 

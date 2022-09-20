@@ -11,6 +11,7 @@ So, the first item should show up first (at the top).
  * @param {string[]} items
  */
 const renderShoppingList = items => {
+<<<<<<< HEAD
     const list = document.getElementById("shopping-list");
     for (const item of items) {
         let newItem = document.createElement('li');
@@ -18,11 +19,14 @@ const renderShoppingList = items => {
         list.append(newItem);
 
     }
+=======
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
 
 }
 // Sample usage - do not modify
 const sampleList = ["Orange", "Banana", "Coffee", "Paper"];
 console.log(renderShoppingList(sampleList));
+<<<<<<< HEAD
 
 
 /* An alternative way:
@@ -33,3 +37,5 @@ console.log(renderShoppingList(sampleList));
 
 use 
 insertAdjacentHTML('beforeend', `<li>{$item}</li>`)*/ 
+=======
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49

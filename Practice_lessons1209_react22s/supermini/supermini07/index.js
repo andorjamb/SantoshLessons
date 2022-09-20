@@ -1,6 +1,7 @@
 class Tasks {
   constructor() {
     this.tasks = [];
+<<<<<<< HEAD
 
   }
 
@@ -30,6 +31,12 @@ class Tasks {
     return this.tasks.join(',').toLowerCase();
 
   }
+=======
+  }
+
+  /** @param {string} csvString */
+  importCsv(csvString) {}
+>>>>>>> 462362d81eb488940cec8db75c81d19a01a09c49
 }
 
 //Sample usage do not modify (but feel free to read)
