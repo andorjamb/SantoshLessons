@@ -44,7 +44,7 @@ h3 {
     color: darkblue;
 }
 
-input {
+#item {
     border: solid 2px darkblue;
     border-radius: 0.5rem;
     margin: 1rem 0;
@@ -55,8 +55,13 @@ ul {
     padding-top: 2rem;
 }
 
+li {
+    padding: 0;
+}
+
 
 
 .checkbox {
     display: inline;
-} 
+    margin-left: 1rem;
+}
