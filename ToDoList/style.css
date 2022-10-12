@@ -8,7 +8,11 @@
 }
 
 body {
-    background-color: darkslateblue;
+    background-image: linear-gradient(0deg, rgb(127, 91, 210), rgb(75, 45, 185));
+    background-repeat: no-repeat;
+    background-position: cover;
+    height: 100vh;
+
 
 }
 
@@ -46,3 +50,13 @@ input {
     margin: 1rem 0;
     padding: 0.5rem;
 }
+
+ul {
+    padding-top: 2rem;
+}
+
+
+
+.checkbox {
+    display: inline;
+} 
