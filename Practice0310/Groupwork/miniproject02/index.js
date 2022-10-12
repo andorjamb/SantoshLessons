@@ -41,7 +41,7 @@ You can create a free account and browse the documentation.
 The free plan on this API allows you to perform 1,500 requests per month.
 Remember that every time you type in the editor, the browser preview will refresh,
 causing a new API request. In order not to exceed your limit, we recommend commenting out the
-fetch/FetchWrapper related code after you get it to work the first time. */
+fetch/FetchWrapper related fetchcode after you get it to work the first time. */
 
 //Notes:
 // Sign up for a free account on exchange https://www.exchangerate-api.com/
@@ -53,3 +53,43 @@ fetch/FetchWrapper related code after you get it to work the first time. */
 // Create a function called getConversionRates and add a console.log(“New currency selected”) inside of it
 // Whenever the user choose a new value for the base currency, you need to call the getConversionRates function.
 // Test it out in the browser tab.
+
+
+let baseLink = "https://v6.exchangerate-api.com/v6/d1ae0437336f05791b25af6c/latest/";
+let receiveData
+let newFetch = new FetchWrapper(baseLink)
+
+let selBase = document.querySelector('#base-currency')
+let selTarget = document.querySelector('#target-currency')
+let converResult = document.querySelector('#conversion-result')
+let fromValue = selBase.value; /* currency code */
+let toValue = selTarget.value;
+const getApiData = (endpoint) => {
+  newFetch.get(endpoint).then(data => {
+    console.log(data)
+    receiveData = data.conversion_rates
+    console.log(receiveData)
+  }).catch(err => console.log(err))
+}
+
+selBase.addEventListener('change', (e) => {
+  fromValue = receiveData[e.target.value]
+
+  fromValue ? converCal() : ''
+})
+selTarget.addEventListener('change', (e) => {
+  toValue = receiveData[e.target.value]
+
+  converCal()
+})
+getApiData('USD');
+
+const converCal = () => {
+  let result = (toValue * fromValue).toFixed(2)
+  converResult.innerHTML = result;
+  console.log(receiveData);
+
+}
+
+
+
