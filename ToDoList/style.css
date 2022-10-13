@@ -88,3 +88,9 @@ li {
     text-decoration: line-through;
 }
 
+.strike-through {
+    color: gray;
+    text-decoration: line-through;
+}
+
+
