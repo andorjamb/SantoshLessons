@@ -25,7 +25,7 @@ header {
 
 main {
     padding: 2rem;
-    height: 50vh;
+    min-height: 50vh;
     width: 60vw;
     margin: auto;
     border: 1px dotted blue;
@@ -64,4 +64,13 @@ li {
 .checkbox {
     display: inline;
     margin-left: 1rem;
+}
+
+.checkbox.strike-through {
+    color: gray;
+    text-decoration: line-through;
+}
+
+footer>div {
+    width: 60vw;
 }
