@@ -44,11 +44,22 @@ h3 {
     color: darkblue;
 }
 
-#item {
+#item, button {
     border: solid 2px darkblue;
     border-radius: 0.5rem;
     margin: 1rem 0;
     padding: 0.5rem;
+}
+
+button {
+font-weight:bolder;
+background-image: linear-gradient(rgb(117, 13, 109), rgb(165, 73, 218));
+color: white;
+border:solid 1px  rgb(75, 45, 185);
+float: right;
+
+
+
 }
 
 ul {
@@ -59,7 +70,10 @@ li {
     padding: 0;
 }
 
-
+.list {
+    min-height:20vh;
+    min-width: 10vw;
+}
 
 .checkbox {
     display: inline;
@@ -71,6 +85,3 @@ li {
     text-decoration: line-through;
 }
 
-footer>div {
-    width: 60vw;
-}

@@ -1,10 +1,8 @@
 let item = document.querySelector("#item");
 const form = document.querySelector("form");
 const ul = document.querySelector("ul");
-let itemNumber = 0;
-const checkedNodes = [];
-const checkboxNodeList = document.querySelector('.checkbox');
 const reset = document.querySelector('#reset');
+const testArray = [];
 
 
 
@@ -24,32 +22,38 @@ function getAll() { /* Retrieves stored list  */
 
 
 function addItem(input) { /* Adds new item and checkbox to DOM */
+ /* create new list item, place holder for label and checkbox  */
+        let newLi = document.createElement("li");
+        //newLi.textContent = input;
+        ul.appendChild(newLi);
+
+        /* create label for checkbox */
+        let newLabel = document.createElement("label");
+        newLabel.setAttribute("for", input.replaceAll(' ', '_'));
+        newLabel.textContent = input;
+        newLi.appendChild(newLabel);
+       
         /*  create checkbox */
         let checkbox = document.createElement("input");
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("class", "checkbox");
+        checkbox.setAttribute("name", "checklist");
         checkbox.setAttribute("id", input.replaceAll(' ', '_'));
-        /* create new list item  */
-        let newLi = document.createElement("li");
-        newLi.textContent = input;
-        ul.appendChild(newLi);
-
-        /* create empty label for checkbox */
-        let newLabel = document.createElement("label");
-        newLabel.setAttribute("for", input.replaceAll(' ', '_'));
-        newLi.appendChild(newLabel);
-        newLabel.insertAdjacentElement('beforeend', checkbox);
-        console.log('print checkboxnode list:', checkboxNodeList);
+        testArray.push(checkbox);
+        console.log('testArray: ', testArray)
+        newLabel.insertAdjacentElement('beforeend', checkbox);  
+       
     
 }
 
 function storeItem(input) {  /* adds item to localStorage, updates list length */
-    localStorage.setItem(++itemNumber, input);
-    return itemNumber;
+    localStorage.setItem(((localStorage.length)+1), input);
+   
 }
 
 function removeItem(ob) {
-    checkboxNodeList.pop(ob);
+    testArray.pop(ob);
+    localStorage.remove(ob);
 }
 
 
@@ -61,8 +65,7 @@ function resetList() {
 /*   ////// RUN PROGRAM  //////////////  */
 
 window.onload = () => getAll();
-console.log(localStorage.getItem("0"));
-console.log(checkboxNodeList);
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -72,18 +75,7 @@ if (item.value){ addItem(item.value);
     item.value = "";}
 });
 
-reset.addEventListener('click', ()=>resetList());
-
-for (let node in checkboxNodeList){
-    console.log(node);
-    console.log('class list', checkbox.classList);
-    node.addEventListener('change', function () {
-        if (node.checked) {node.classList.add("strike-through");}
-        else {
-            node.classList.remove("strike-through");}
- 
-
-})}
-
+reset.addEventListener('click', ()=>{resetList();
+    return (console.log('local storage cleared.'))});
 
 
