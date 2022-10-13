@@ -7,9 +7,13 @@ let checkboxes;
 /* ////   FUNCTIONS  ///////   */
 
 function getAll() { /* Retrieves stored list  */
-/**now this needs to be fixed! */
 
     if (localStorage.length > 0) {
+        for (const i in localStorage){
+            if (localStorage.getItem(i) == 'true'){
+                localStorage.removeItem(i);
+            }
+        }
         let toDoArray = Object.keys(localStorage);
         console.log(toDoArray);
 toDoArray.forEach((item)=>addItem(item));
@@ -31,26 +35,24 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("class", "checkbox");
         checkbox.setAttribute("name", "checklist");
-        //checkbox.setAttribute("id", input.replaceAll(' ', '_'));
+        checkbox.setAttribute("id", input.replaceAll(' ', '_'));
         checkbox.addEventListener('change', function(){
         changeClass(checkbox.parentNode);
-        storageStatus(checkbox, checkbox.checked);//if true or false
+       updateStatus(checkbox, checkbox.checked);//if true or false
 })
 
         newLabel.insertAdjacentElement('beforeend', checkbox);  
  return checkboxes = document.querySelectorAll('.checkbox');   
 }
 
-function storeItem(input) {  /* adds item to localStorage, updates list length */
-/**change this! make the key the input id. then the value can be true or false! */
-    //localStorage.setItem(((localStorage.length)+1), input);
-    localStorage.setItem(input, true);
+function storeItem(input) {  /* adds item to localStorage*/
+    localStorage.setItem(input, false);
 }
 
-/**There is a problem here! You need to fix the parameter */
-function removeToDo(ob) {
-    localStorage.removeItem(ob);
-}
+/**this function not necessary?*/
+/* function removeToDo(item) {
+    localStorage.removeItem(item);
+} */
 
 function resetList() {
     localStorage.clear();
@@ -61,13 +63,11 @@ function changeClass(e){
     e.parentNode.classList.toggle('strike-through')
 }
 
-function storageStatus(node, bool){
-    console.log('store status output:', bool);
-    if(bool){
-        removeToDo(node);
+function updateStatus(input, value){
+    if(value == true){
+        localStorage.removeItem(input);
     }
-    else{storeItem(node)}
-
+    else{storeItem(input);}
 }
 
 /*   ////// RUN PROGRAM  //////////////  */
@@ -75,11 +75,10 @@ function storageStatus(node, bool){
 window.onload = () => {
     getAll();
     if (checkboxes){
-    checkboxes.forEach((node)=>{
-        node.addEventListener('change', function(){        
-        console.log('event listener working!');
-        changeClass(node);
-        storageStatus(node, node.checked);//if true or false
+    checkboxes.forEach((checkbox)=>{
+        checkbox.addEventListener('change', function(){        
+        changeClass(checkbox);
+      updateStatus(checkbox.id.replaceAll('_', ' '), checkbox.checked);
     })
     });
     }
