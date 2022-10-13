@@ -3,6 +3,9 @@ const form = document.querySelector("form");
 const ul = document.querySelector("ul");
 const reset = document.querySelector('#reset');
 const testArray = [];
+let checkboxes;
+
+
 
 
 
@@ -14,12 +17,10 @@ function getAll() { /* Retrieves stored list  */
         console.log(localStorage);
         for (let i = 1; i <= localStorage.length; i++) {
             let fetched = localStorage.getItem(i);
-            console.log(fetched);
            addItem(fetched);
         }
     }
 }
-
 
 function addItem(input) { /* Adds new item and checkbox to DOM */
  /* create new list item, place holder for label and checkbox  */
@@ -39,10 +40,12 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
         checkbox.setAttribute("class", "checkbox");
         checkbox.setAttribute("name", "checklist");
         checkbox.setAttribute("id", input.replaceAll(' ', '_'));
+   
         testArray.push(checkbox);
-        console.log('testArray: ', testArray)
         newLabel.insertAdjacentElement('beforeend', checkbox);  
-       
+          
+       //checkboxes.addEventListener('change', checkFunction());
+ return checkboxes = document.querySelectorAll('.checkbox');
     
 }
 
@@ -57,8 +60,13 @@ function removeItem(ob) {
 }
 
 
-function resetList() { 
+function resetList() {
     localStorage.clear();
+}
+
+function checkFunction(){
+let helpMe = document.querySelectorAll('.checkbox');     
+console.log("helpMe");
 }
 
 
@@ -66,14 +74,20 @@ function resetList() {
 
 window.onload = () => getAll();
 
-
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    console.log('submitting');
+    e.preventDefault();  
 if (item.value){ addItem(item.value);
+    /* let checkboxes = document.querySelectorAll('.checkbox');
+    console.log('testArray: ', testArray)
+    console.log(checkboxes); */
     storeItem(item.value);
-    item.value = "";}
+    item.value = "";
+    console.log('checkboxes: ', checkboxes);
+    checkboxes.forEach((node)=>{
+    node.addEventListener('change', function(){console.log(node)})});
+}
 });
+
 
 reset.addEventListener('click', ()=>{resetList();
     return (console.log('local storage cleared.'))});

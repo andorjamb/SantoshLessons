@@ -53,10 +53,13 @@ h3 {
 
 button {
 font-weight:bolder;
+position: fixed;
+bottom: 3rem;
+right: 3rem;
 background-image: linear-gradient(rgb(117, 13, 109), rgb(165, 73, 218));
 color: white;
 border:solid 1px  rgb(75, 45, 185);
-float: right;
+
 
 
 
