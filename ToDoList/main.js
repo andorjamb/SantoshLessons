@@ -7,11 +7,12 @@ let checkboxes;
 /* ////   FUNCTIONS  ///////   */
 
 function getAll() { /* Retrieves stored list  */
+/**now this needs to be fixed! */
+
     if (localStorage.length > 0) {
-        for (let i = 1; i <= localStorage.length; i++) {
-            let fetched = localStorage.getItem(i);
-           addItem(fetched);   
-        }
+        let toDoArray = Object.keys(localStorage);
+        console.log(toDoArray);
+toDoArray.forEach((item)=>addItem(item));
     }
 }
 
@@ -21,7 +22,7 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
 
         /* create label for checkbox */
         let newLabel = document.createElement("label");
-        newLabel.setAttribute("for", input.replaceAll(' ', '_'));
+        //newLabel.setAttribute("for", input.replaceAll(' ', '_'));
         newLabel.textContent = input;
         newLi.appendChild(newLabel);
        
@@ -30,10 +31,10 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("class", "checkbox");
         checkbox.setAttribute("name", "checklist");
-        checkbox.setAttribute("id", input.replaceAll(' ', '_'));
+        //checkbox.setAttribute("id", input.replaceAll(' ', '_'));
         checkbox.addEventListener('change', function(){
         changeClass(checkbox.parentNode);
-        storageStatus(checkbox.checked);//if true or false
+        storageStatus(checkbox, checkbox.checked);//if true or false
 })
 
         newLabel.insertAdjacentElement('beforeend', checkbox);  
@@ -42,11 +43,12 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
 
 function storeItem(input) {  /* adds item to localStorage, updates list length */
 /**change this! make the key the input id. then the value can be true or false! */
-    localStorage.setItem(((localStorage.length)+1), input);
+    //localStorage.setItem(((localStorage.length)+1), input);
+    localStorage.setItem(input, true);
 }
 
 /**There is a problem here! You need to fix the parameter */
-function removeItem(ob.value()) {
+function removeToDo(ob) {
     localStorage.removeItem(ob);
 }
 
@@ -59,12 +61,12 @@ function changeClass(e){
     e.parentNode.classList.toggle('strike-through')
 }
 
-function storageStatus(bool){
+function storageStatus(node, bool){
     console.log('store status output:', bool);
     if(bool){
-        removeItem();
+        removeToDo(node);
     }
-    else{storeItem()}
+    else{storeItem(node)}
 
 }
 
@@ -77,7 +79,7 @@ window.onload = () => {
         node.addEventListener('change', function(){        
         console.log('event listener working!');
         changeClass(node);
-        storageStatus(node.checked);//if true or false
+        storageStatus(node, node.checked);//if true or false
     })
     });
     }
