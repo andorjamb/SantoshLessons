@@ -36,7 +36,7 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
     checkbox.setAttribute("id", input.replaceAll(' ', '_'));
     checkbox.addEventListener('change', function () {
         changeClass(checkbox.parentNode);
-        updateValue(checkbox, checkbox.checked.toString());//if true or false
+        updateValue(input, (checkbox.checked).toString());//if true or false
     })
 
     newLabel.insertAdjacentElement('beforeend', checkbox);
@@ -64,14 +64,15 @@ function updateValue(input, value) { //there is a bug here
 
 window.onload = () => {
     getAll();
-    if (checkboxes) {
-        checkboxes.forEach((checkbox) => {
-            checkbox.addEventListener('change', function () {
-                changeClass(checkbox);
-                updateValue(checkbox.id.replaceAll('_', ' '), checkbox.checked);
-            })
-        });
-    }
+    /*  if (checkboxes) {
+         console.log('getting checkboxes');
+         checkboxes.forEach((checkbox) => {
+             checkbox.addEventListener('change', function () {
+                 changeClass(checkbox);
+                 updateValue((checkbox.id).replaceAll('_', ' '), (checkbox.checked).toString());
+             })
+         });
+     } */
 }
 
 form.addEventListener('submit', (e) => {
