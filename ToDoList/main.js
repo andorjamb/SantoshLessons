@@ -26,7 +26,7 @@ function addItem(input) { /* Adds new item and checkbox to DOM */
     let newLabel = document.createElement("label");
     newLabel.setAttribute("for", input.replaceAll(' ', '_'));
     newLabel.textContent = input;
-    newLi.appendChild(newLabel); //child? or insertAdjacent?
+    newLi.appendChild(newLabel);
 
     /*  create checkbox */
     let checkbox = document.createElement("input");
@@ -56,7 +56,7 @@ function changeClass(e) {
     e.parentNode.classList.toggle('strike-through')
 }
 
-function updateValue(input, value) { //there is a bug here
+function updateValue(input, value) {
     localStorage.setItem(input, value);
 }
 
@@ -64,15 +64,6 @@ function updateValue(input, value) { //there is a bug here
 
 window.onload = () => {
     getAll();
-    /*  if (checkboxes) {
-         console.log('getting checkboxes');
-         checkboxes.forEach((checkbox) => {
-             checkbox.addEventListener('change', function () {
-                 changeClass(checkbox);
-                 updateValue((checkbox.id).replaceAll('_', ' '), (checkbox.checked).toString());
-             })
-         });
-     } */
 }
 
 form.addEventListener('submit', (e) => {
