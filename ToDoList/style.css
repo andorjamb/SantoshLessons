@@ -12,8 +12,6 @@ body {
     background-repeat: no-repeat;
     background-position: cover;
     height: 100vh;
-
-
 }
 
 header {
@@ -44,7 +42,8 @@ h3 {
     color: darkblue;
 }
 
-#item, button {
+#item,
+button {
     border: solid 2px darkblue;
     border-radius: 0.5rem;
     margin: 1rem 0;
@@ -52,16 +51,13 @@ h3 {
 }
 
 button {
-font-weight:bolder;
-position: fixed;
-bottom: 3rem;
-right: 3rem;
-background-image: linear-gradient(rgb(117, 13, 109), rgb(165, 73, 218));
-color: white;
-border:solid 1px  rgb(75, 45, 185);
-
-
-
+    font-weight: bolder;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background-image: linear-gradient(rgb(117, 13, 109), rgb(165, 73, 218));
+    color: white;
+    border: solid 1px rgb(117, 13, 109);
 
 }
 
@@ -73,14 +69,15 @@ li {
     padding: 0;
 }
 
-.list {
+/* .list {
     min-height:20vh;
     min-width: 10vw;
-}
+} */
 
 .checkbox {
     display: inline;
     margin-left: 1rem;
+    float: right;
 }
 
 .checkbox.strike-through {
@@ -92,5 +89,3 @@ li {
     color: gray;
     text-decoration: line-through;
 }
-
-
