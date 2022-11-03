@@ -8,7 +8,8 @@ Fix that without using an if condition.
 /**
  * @param {number[]} userIds
  */
-function logUserIds() {
+function logUserIds(arr = ['empty']) {
+    arr.forEach((id) => console.log(id))
 
 }
 

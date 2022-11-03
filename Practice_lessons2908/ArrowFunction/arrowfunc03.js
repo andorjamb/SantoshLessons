@@ -8,9 +8,7 @@ Rewrite it as an arrow function.
 /**
  * @param {number} value
  */
-function triple() {
-
-}
+const triple = (i) => 3 * i;
 
 // Sample usage - do not change
 console.log(triple(2)); // 6
